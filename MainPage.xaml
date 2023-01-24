@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiExample.MainPage"
+             xmlns:control="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:local="clr-namespace:MauiExample">
+
+    <control:SfCircularChart>
+        <control:SfCircularChart.Title>
+            <Label Text="Product Sales" TextColor="Red" HorizontalTextAlignment="Center"
+                   FontSize="Large"></Label>
+        </control:SfCircularChart.Title>
+        <control:SfCircularChart.Legend>
+            <control:ChartLegend></control:ChartLegend>
+        </control:SfCircularChart.Legend>
+        <control:DoughnutSeries ItemsSource="{ Binding Products }" ShowDataLabels="True"
+                           ExplodeOnTouch="True"
+                           EnableTooltip="True" Radius="0.9"
+                           InnerRadius="0.7"
+                           XBindingPath="Name"
+                           YBindingPath="Sales">
+            <control:DoughnutSeries.SelectionBehavior>
+                <control:DataPointSelectionBehavior SelectionBrush="#314A6E" 
+                                                    Type="Multiple"></control:DataPointSelectionBehavior>
+            </control:DoughnutSeries.SelectionBehavior>
+        </control:DoughnutSeries>
+        <!--<control:PieSeries ItemsSource="{ Binding Products }" ShowDataLabels="True"
+                           ExplodeOnTouch="True"
+                           EnableTooltip="True" Radius="0.9"
+                           XBindingPath="Name"
+                           YBindingPath="Sales">
+            <control:PieSeries.SelectionBehavior>
+                <control:DataPointSelectionBehavior SelectionBrush="#314A6E" 
+                                                    Type="Multiple"></control:DataPointSelectionBehavior>
+            </control:PieSeries.SelectionBehavior>
+        </control:PieSeries>-->
+        <control:SfCircularChart.BindingContext>
+            <local:DataViewModel></local:DataViewModel>
+        </control:SfCircularChart.BindingContext>
+        
+    </control:SfCircularChart>
+
+   
+</ContentPage>
