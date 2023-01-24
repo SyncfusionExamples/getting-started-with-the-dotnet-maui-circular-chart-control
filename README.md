@@ -1,0 +1,2 @@
+# getting-started-with-the-dotnet-maui-circular-chart-control
+A quick start .NET MAUI project that shows how to create and configure the Syncfusion MAUI Circular Chart. This project also includes a code snippet to bind data objects to it, explode each segment, customize selection behavior, render doughnut chart type, and enable a few of its interactive features like data labels, legends, and tooltips.
