@@ -19,3 +19,52 @@ Make sure that you have the compatible versions of Visual Studio with .NET MAUI 
 ## How to run this application?
 
 To run this application, you need to first clone the getting-started-with-the-dotnet-maui-circular-chart-control repository and then open it in Visual Studio 2022. Now, simply build and run your project to view the output.
+
+## Creating an application using the .NET MAUI chart
+* Create a new .NET MAUI application in Visual Studio.
+* Syncfusion .NET MAUI components are available in nuget.org. To add SfCircularChart to your project, open the NuGet package manager in Visual Studio, search for Syncfusion.Maui.Charts and then install it.
+* To initialize the control, import the Chart namespace.
+* Initialize SfCircularChart.
+
+```XAML
+<ContentPage   
+    . . .
+    xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts">
+
+    <chart:SfCircularChart/>
+</ContentPage>
+```
+
+## Register the handler
+Syncfusion.Maui.Core nuget is a dependent package for all Syncfusion controls of .NET MAUI. In the MauiProgram.cs file, register the handler for Syncfusion core.
+
+```XAML
+using Microsoft.Maui;
+using Microsoft.Maui.Hosting;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Hosting;
+using Microsoft.Maui.Controls.Xaml;
+using Syncfusion.Maui.Core.Hosting;
+
+namespace ChartGettingStarted
+{
+    public static class MauiProgram
+    {
+        public static MauiApp CreateMauiApp()
+        {
+            var builder = MauiApp.CreateBuilder();
+            builder
+            .UseMauiApp<App>()
+            .ConfigureSyncfusionCore()
+            .ConfigureFonts(fonts =>
+            {
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+            });
+
+            return builder.Build();
+        }
+    }
+}
+```
+
+![image](https://github.com/SuryaKaran2143/getting-started-with-the-dotnet-maui-circular-chart-control/assets/113962276/81f55193-5ab7-4f28-a64a-4f67c87f4544)
