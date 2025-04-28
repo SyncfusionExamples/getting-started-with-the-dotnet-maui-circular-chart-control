@@ -8,7 +8,7 @@ namespace MauiExample
 {
     public class DataModel
     {
-        public string Name { get; set; }    
+        public string Name { get; set; } = string.Empty;
         public double Sales { get; set; }
     }
 }
